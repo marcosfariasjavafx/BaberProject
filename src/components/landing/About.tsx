@@ -5,7 +5,7 @@ const highlights = [
   {
     icon: Award,
     title: "Profissionais certificados",
-    text: "Time especializado em fade, visagismo e barba desenhada.",
+    text: "Time especializado em fade e barba desenhada.",
   },
   {
     icon: Sparkles,
