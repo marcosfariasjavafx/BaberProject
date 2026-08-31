@@ -20,7 +20,7 @@ const barbers = [
     message: "Olá! Gostaria de agendar com a Julia na The Best.",
   },
   {
-    name: "Ge",
+    name: "Geovani",
     specialty: "",
     image: ge,
     message: "Olá! Gostaria de agendar com o Ge na The Best.",
