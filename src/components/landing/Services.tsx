@@ -18,6 +18,7 @@ import { WA_GENERAL } from "@/lib/whatsapp";
 
 const services = [
   { icon: Scissors, title: "Corte", price: "R$ 40" },
+  { icon: Scissors, title: "Corte + Sobrancelha", price: "R$ 45" },
   { icon: Shirt, title: "Social", price: "R$ 30" },
   { icon: Eye, title: "Sobrancelha", price: "R$ 10" },
   { icon: Droplets, title: "Barba Completa", price: "R$ 30" },
