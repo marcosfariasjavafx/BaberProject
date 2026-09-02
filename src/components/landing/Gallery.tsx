@@ -8,6 +8,10 @@ import corte4 from "@/assets/corte4.png";
 import corte5 from "@/assets/corte5.png";
 import corte6 from "@/assets/corte6.png";
 import corte7 from "@/assets/corte7.png";
+import corte8 from "@/assets/corte8.jpeg";
+import corte9 from "@/assets/corte9.jpeg";
+import corte10 from "@/assets/corte10.jpeg";
+import corte11 from "@/assets/corte11.jpeg";
 
 const photos = [
   {
@@ -37,6 +41,22 @@ const photos = [
   {
     src: corte7,
     alt: "Corte grisalho texturizado com fade na nuca",
+  },
+   {
+    src: corte8,
+    alt: "Corte ",
+  },
+   {
+    src: corte9,
+    alt: "Corte ",
+  },
+   {
+    src: corte10,
+    alt: "Corte",
+  },
+   {
+    src: corte11,
+    alt: "Corte ",
   },
 ];
 
