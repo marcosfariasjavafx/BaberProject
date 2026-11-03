@@ -4,7 +4,6 @@ import { waLink } from "@/lib/whatsapp";
 import pietro from "@/assets/barber-pietro.jpg";
 import julia from "@/assets/barber-julia.jpg";
 import ge from "@/assets/barber-ge.jpg";
-import caio from "@/assets/barber-caio.jpg";
 
 const barbers = [
   {
@@ -24,12 +23,6 @@ const barbers = [
     specialty: "",
     image: ge,
     message: "Olá! Gostaria de agendar com o Ge na The Best.",
-  },
-  {
-    name: "Caio",
-    specialty: "",
-    image: caio,
-    message: "Olá! Gostaria de agendar com o Caio na The Best.",
   },
 ];
 
