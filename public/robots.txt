@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://thebest-eta.vercel.app/sitemap.xml
+Sitemap: https://thebbest.com.br/sitemap.xml

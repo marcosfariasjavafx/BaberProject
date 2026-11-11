@@ -10,7 +10,7 @@ import { Footer } from "@/components/landing/Footer";
 import { FloatingBlade } from "@/components/landing/FloatingBlade";
 
 // Se o site ganhar um domínio próprio, troque aqui e em public/sitemap.xml e public/robots.txt.
-const SITE_URL = "https://thebest-eta.vercel.app";
+const SITE_URL = "https://thebbest.com.br";
 const title = "The Best Barbearia | Barbershop Premium em Americana - SP";
 const description =
   "The Best Barbearia em São Jerônimo, Americana - SP. Corte de cabelo, barba e visagismo com profissionais especializados. Agende seu horário pelo WhatsApp.";
