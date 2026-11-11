@@ -28,6 +28,7 @@ export function Hero() {
       <div className="absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-primary-glow/25 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-4xl px-5 pt-24 pb-16 text-center sm:pt-28 sm:pb-20 md:px-8">
+        <h1 className="sr-only">The Best Barbearia — Barbershop Premium em Americana, SP</h1>
         <motion.img
           src={logo}
           alt="The Best Barbershop"
