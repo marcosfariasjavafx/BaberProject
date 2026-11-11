@@ -25,7 +25,7 @@ const localBusinessJsonLd = {
   description,
   url: `${SITE_URL}/`,
   image: ogImage,
-  logo: `${SITE_URL}/favicon.png`,
+  logo: `${SITE_URL}/logo-512.png`,
   telephone: "+55 19 99213-8585",
   address: {
     "@type": "PostalAddress",
