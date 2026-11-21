@@ -206,3 +206,121 @@
     font-family: var(--font-sans);
   }
 }
+
+/* One-day anniversary decoration. Rendered only on 21 November 2026. */
+.anniversary-message {
+  position: relative;
+  margin: 1.5rem auto 0;
+  max-width: 36rem;
+  color: oklch(0.99 0.005 85);
+  text-shadow: 0 2px 12px oklch(0.12 0.03 290 / 0.7);
+}
+.anniversary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid oklch(0.84 0.13 85 / 0.65);
+  border-radius: 999px;
+  background: oklch(0.2 0.06 300 / 0.85);
+  color: oklch(0.9 0.1 85);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.anniversary-title {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 5.5vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+.anniversary-number {
+  color: oklch(0.88 0.13 85);
+  text-shadow: 0 0 28px oklch(0.79 0.14 85 / 0.3);
+}
+.anniversary-thanks {
+  margin-top: 0.7rem;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  font-weight: 700;
+}
+.anniversary-copy {
+  max-width: 30rem;
+  margin: 0.6rem auto 0;
+  color: oklch(0.96 0.01 300);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.anniversary-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.anniversary-confetti {
+  position: absolute;
+  top: -2rem;
+  left: var(--confetti-x);
+  width: 5px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--confetti-color);
+  opacity: 0;
+  animation: anniversary-fall var(--confetti-duration) var(--confetti-delay) linear infinite;
+}
+.anniversary-balloon {
+  position: absolute;
+  top: 18%;
+  width: clamp(3rem, 8vw, 6.5rem);
+  aspect-ratio: 0.8;
+  border-radius: 50% 50% 47% 47%;
+  opacity: 0.85;
+  box-shadow: inset -12px -10px 20px oklch(0.15 0.04 290 / 0.3);
+}
+.anniversary-balloon::before {
+  content: "";
+  position: absolute;
+  left: 24%;
+  top: 17%;
+  width: 17%;
+  height: 28%;
+  border-radius: 50%;
+  background: oklch(1 0 0 / 0.35);
+  transform: rotate(20deg);
+}
+.anniversary-balloon::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 9rem;
+  width: 1px;
+  background: linear-gradient(oklch(0.9 0.04 85 / 0.65), transparent);
+}
+.anniversary-balloon-left {
+  left: 1%;
+  transform: rotate(-12deg);
+  background: radial-gradient(circle at 30% 25%, oklch(0.79 0.15 305), oklch(0.43 0.22 295));
+}
+.anniversary-balloon-right {
+  right: 1%;
+  top: 25%;
+  transform: rotate(12deg);
+  background: radial-gradient(circle at 30% 25%, oklch(0.95 0.09 90), oklch(0.69 0.15 80));
+}
+@keyframes anniversary-fall {
+  0% { transform: translate3d(0, -2rem, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.75; }
+  85% { opacity: 0.6; }
+  100% { transform: translate3d(30px, 95vh, 0) rotate(480deg); opacity: 0; }
+}
+@media (max-width: 639px) {
+  .anniversary-balloon { top: 9%; width: 2.75rem; }
+  .anniversary-balloon-right { top: 15%; }
+  .anniversary-copy { max-width: 20rem; font-size: 0.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anniversary-confetti { animation: none; display: none; }
+}
