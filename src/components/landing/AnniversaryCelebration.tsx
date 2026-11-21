@@ -7,17 +7,20 @@ const END = Date.parse("2026-11-22T00:00:00-03:00");
 export function AnniversaryCelebration({ children }: { children: ReactNode }) {
   // Match the server render, then check the visitor's clock after hydration.
   const [active, setActive] = useState(false);
+  const [launchBalloons, setLaunchBalloons] = useState(true);
 
   useEffect(() => {
     const now = Date.now();
     if (now < START || now >= END) return;
     setActive(true);
+    const launchTimeout = window.setTimeout(() => setLaunchBalloons(false), 11000);
     const timeout = window.setTimeout(() => setActive(false), END - now);
     const checkDate = () => setActive(Date.now() >= START && Date.now() < END);
     window.addEventListener("focus", checkDate);
     document.addEventListener("visibilitychange", checkDate);
     return () => {
       window.clearTimeout(timeout);
+      window.clearTimeout(launchTimeout);
       window.removeEventListener("focus", checkDate);
       document.removeEventListener("visibilitychange", checkDate);
     };
@@ -27,6 +30,22 @@ export function AnniversaryCelebration({ children }: { children: ReactNode }) {
 
   return (
     <>
+      {launchBalloons ? (
+        <div className="anniversary-launch" aria-hidden="true">
+          {Array.from({ length: 14 }, (_, index) => (
+            <span
+              key={index}
+              className="anniversary-balloon anniversary-launch-balloon"
+              style={{
+                "--balloon-x": `${4 + ((index * 29) % 89)}%`,
+                "--balloon-delay": `${index * 0.2}s`,
+                "--balloon-size": `${36 + ((index * 11) % 33)}px`,
+                "--balloon-sway": `${index % 2 === 0 ? -35 : 35}px`,
+              } as CSSProperties}
+            />
+          ))}
+        </div>
+      ) : null}
       <div className="anniversary-decor" aria-hidden="true">
         <span className="anniversary-balloon anniversary-balloon-left" />
         <span className="anniversary-balloon anniversary-balloon-right" />

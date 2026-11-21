@@ -324,3 +324,38 @@
 @media (prefers-reduced-motion: reduce) {
   .anniversary-confetti { animation: none; display: none; }
 }
+
+/* A single welcome release on each page load, without intercepting clicks. */
+.anniversary-launch {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  overflow: hidden;
+}
+.anniversary-launch-balloon {
+  top: calc(100% + 8rem);
+  left: var(--balloon-x);
+  width: var(--balloon-size);
+  opacity: 0;
+  animation: anniversary-rise 7s var(--balloon-delay) ease-out both;
+}
+.anniversary-launch-balloon:nth-child(odd) {
+  background: radial-gradient(circle at 30% 25%, oklch(0.79 0.15 305), oklch(0.43 0.22 295));
+}
+.anniversary-launch-balloon:nth-child(even) {
+  background: radial-gradient(circle at 30% 25%, oklch(0.95 0.09 90), oklch(0.69 0.15 80));
+}
+.anniversary-launch-balloon::after { height: 4rem; }
+@keyframes anniversary-rise {
+  0% { transform: translate3d(0, 0, 0) rotate(-8deg); opacity: 0; }
+  8% { opacity: 0.9; }
+  75% { opacity: 0.9; }
+  100% {
+    transform: translate3d(var(--balloon-sway), calc(-100vh - 28rem), 0) rotate(12deg);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anniversary-launch { display: none; }
+}
