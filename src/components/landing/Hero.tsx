@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { AnniversaryCelebration } from "./AnniversaryCelebration";
+import { ChristmasGreeting } from "./Christmas";
 import { Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WA_GENERAL } from "@/lib/whatsapp";
@@ -39,7 +39,7 @@ export function Hero() {
           className="mx-auto h-40 w-auto sm:h-64 md:h-72"
         />
 
-        <AnniversaryCelebration>
+        <ChristmasGreeting>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -49,7 +49,7 @@ export function Hero() {
           Cortes precisos, ambiente impecável e um atendimento pensado nos detalhes. Uma experiência
           de barbearia feita para quem exige o melhor.
         </motion.p>
-        </AnniversaryCelebration>
+        </ChristmasGreeting>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
