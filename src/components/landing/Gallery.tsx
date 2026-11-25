@@ -1,13 +1,19 @@
+import corte1w384 from "@/assets/optimized/corte1-384.webp";
+import corte5w384 from "@/assets/optimized/corte5-384.webp";
+import corte6w384 from "@/assets/optimized/corte6-384.webp";
+import corte8w384 from "@/assets/optimized/corte8-384.webp";
+import corte9w384 from "@/assets/optimized/corte9-384.webp";
+import corte10w384 from "@/assets/optimized/corte10-384.webp";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { Reveal, SectionTitle } from "./Reveal";
-import corte1 from "@/assets/corte1.png";
-import corte2 from "@/assets/corte2.png";
-import corte3 from "@/assets/corte3.png";
-import corte4 from "@/assets/corte4.png";
-import corte5 from "@/assets/corte5.png";
-import corte6 from "@/assets/corte6.png";
-import corte7 from "@/assets/corte7.png";
+import corte1 from "@/assets/optimized/corte1.webp";
+import corte2 from "@/assets/optimized/corte2.webp";
+import corte3 from "@/assets/optimized/corte3.webp";
+import corte4 from "@/assets/optimized/corte4.webp";
+import corte5 from "@/assets/optimized/corte5.webp";
+import corte6 from "@/assets/optimized/corte6.webp";
+import corte7 from "@/assets/optimized/corte7.webp";
 import corte8 from "@/assets/corte8.jpeg";
 import corte9 from "@/assets/corte9.jpeg";
 import corte10 from "@/assets/corte10.jpeg";
@@ -16,52 +22,86 @@ import corte11 from "@/assets/corte11.jpeg";
 const photos = [
   {
     src: corte1,
+    srcSet: `${corte1w384} 384w, ${corte1} 591w`,
+    width: 591,
+    height: 529,
     alt: "Corte pigmentado em vermelho com desenho lateral",
   },
   {
     src: corte2,
+    srcSet: `${corte2} 397w`,
+    width: 397,
+    height: 449,
     alt: "Corte masculino com fade e desenho artístico na lateral",
   },
   {
     src: corte3,
+    srcSet: `${corte3} 362w`,
+    width: 362,
+    height: 403,
     alt: "Corte em cabelo cacheado com desenho na nuca",
   },
   {
     src: corte4,
+    srcSet: `${corte4} 362w`,
+    width: 362,
+    height: 364,
     alt: "Fade clássico masculino bem alinhado",
   },
   {
     src: corte5,
+    srcSet: `${corte5w384} 384w, ${corte5} 464w`,
+    width: 464,
+    height: 364,
     alt: "Corte infantil degradê com risco lateral",
   },
   {
     src: corte6,
+    srcSet: `${corte6w384} 384w, ${corte6} 439w`,
+    width: 439,
+    height: 534,
     alt: "Pai e filho com corte social alinhado",
   },
   {
     src: corte7,
+    srcSet: `${corte7} 353w`,
+    width: 353,
+    height: 447,
     alt: "Corte grisalho texturizado com fade na nuca",
   },
-   {
+  {
     src: corte8,
+    srcSet: `${corte8w384} 384w, ${corte8} 1179w`,
+    width: 1179,
+    height: 1313,
     alt: "Corte ",
   },
-   {
+  {
     src: corte9,
+    srcSet: `${corte9w384} 384w, ${corte9} 1115w`,
+    width: 1115,
+    height: 1290,
     alt: "Corte ",
   },
-   {
+  {
     src: corte10,
+    srcSet: `${corte10w384} 384w, ${corte10} 1020w`,
+    width: 1020,
+    height: 1115,
     alt: "Corte",
   },
-   {
+  {
     src: corte11,
+    srcSet: `${corte11} 1049w`,
+    width: 1049,
+    height: 1214,
     alt: "Corte ",
   },
 ];
 
 export function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
+  const selectedPhoto = selected === null ? undefined : photos[selected];
 
   return (
     <section id="galeria" className="py-24 md:py-32">
@@ -87,6 +127,11 @@ export function Gallery() {
               >
                 <img
                   src={p.src}
+                  srcSet={p.srcSet}
+                  sizes="(min-width: 768px) 360px, (min-width: 640px) 48vw, calc(100vw - 40px)"
+                  width={p.width}
+                  height={p.height}
+                  decoding="async"
                   alt={p.alt}
                   loading="lazy"
                   className="block w-full transition-transform duration-700 group-hover:scale-110"
@@ -99,7 +144,7 @@ export function Gallery() {
         </div>
       </div>
 
-      {selected !== null ? (
+      {selectedPhoto ? (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 p-4 backdrop-blur-md sm:p-8"
           onClick={() => setSelected(null)}
@@ -113,8 +158,8 @@ export function Gallery() {
             <X className="h-5 w-5" />
           </button>
           <img
-            src={photos[selected].src}
-            alt={photos[selected].alt}
+            src={selectedPhoto.src}
+            alt={selectedPhoto.alt}
             className="max-h-full max-w-full rounded-2xl object-contain shadow-glow"
             onClick={(e) => e.stopPropagation()}
           />

@@ -1,6 +1,6 @@
 import { Instagram, MessageCircle } from "lucide-react";
 import { WA_GENERAL } from "@/lib/whatsapp";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/optimized/logo-small.webp";
 
 const nav = [
   { href: "#sobre", label: "Sobre" },

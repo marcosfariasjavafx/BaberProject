@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WA_GENERAL } from "@/lib/whatsapp";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/optimized/logo-small.webp";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -83,6 +83,7 @@ export function Nav() {
         target="_blank"
         rel="noreferrer"
         aria-label="Agendar pelo WhatsApp"
+        data-analytics-source="flutuante"
         className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-glow-lg transition-transform hover:scale-105 sm:hidden"
       >
         <MessageCircle className="h-6 w-6" />

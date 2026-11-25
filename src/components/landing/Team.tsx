@@ -57,7 +57,12 @@ export function Team() {
                   </p>
                   <div className="mt-auto pt-6">
                     <Button asChild variant="hero" className="w-full">
-                      <a href={waLink(b.message)} target="_blank" rel="noreferrer">
+                      <a
+                        href={waLink(b.message)}
+                        data-whatsapp-professional={b.name}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Agendar
                       </a>
                     </Button>

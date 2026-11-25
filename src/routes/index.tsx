@@ -1,3 +1,4 @@
+import { OPENING_HOURS_SCHEMA } from "@/lib/business";
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
@@ -10,7 +11,7 @@ import { Footer } from "@/components/landing/Footer";
 import { FloatingBlade } from "@/components/landing/FloatingBlade";
 
 // Se o site ganhar um domínio próprio, troque aqui e em public/sitemap.xml e public/robots.txt.
-const SITE_URL = "https://thebbest.com.br";
+const SITE_URL = "https://www.thebbest.com.br";
 const title = "The Best Barbearia | Barbershop Premium em Americana - SP";
 const description =
   "The Best Barbearia em São Jerônimo, Americana - SP. Corte de cabelo, barba e visagismo com profissionais especializados. Agende seu horário pelo WhatsApp.";
@@ -36,14 +37,7 @@ const localBusinessJsonLd = {
     addressCountry: "BR",
   },
   areaServed: { "@type": "City", name: "Americana" },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "19:00",
-    },
-  ],
+  openingHoursSpecification: OPENING_HOURS_SCHEMA,
   sameAs: ["https://www.instagram.com/the.best_barbearia/"],
 };
 
