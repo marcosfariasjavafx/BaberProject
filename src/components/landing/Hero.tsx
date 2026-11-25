@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { WA_GENERAL } from "@/lib/whatsapp";
 import { HeroVideo } from "./HeroVideo";
 import logo from "@/assets/logo-transparent.png";
+import logo384 from "@/assets/optimized/logo-hero-384.webp";
+import logo768 from "@/assets/optimized/logo-hero-768.webp";
 
 export function Hero() {
   return (
@@ -20,6 +22,8 @@ export function Hero() {
         <h1 className="sr-only">The Best Barbearia — Barbershop Premium em Americana, SP</h1>
         <motion.img
           src={logo}
+          srcSet={`${logo384} 384w, ${logo768} 768w, ${logo} 1200w`}
+          sizes="(min-width: 768px) 309px, (min-width: 640px) 275px, 172px"
           alt="The Best Barbershop"
           width={1200}
           height={1120}
